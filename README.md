@@ -1,14 +1,32 @@
 # Video Production
 
-Skill для повторяемого производства продуктовых видео и передачи проекта следующему агенту.
+Пять навыков для воспроизводимого производства продуктовых и презентационных видео — от сценария до архива проекта.
+
+## Навыки
+
+| Навык | Результат |
+|---|---|
+| `video-preproduction` | таймированный сценарий, раскадровка, shot list и перечень ассетов |
+| `ui-video-capture` | чистая и повторяемая запись интерфейса без приватных данных |
+| `ffmpeg-edit-pipeline` | воспроизводимый монтаж, звук, титры, композиция и экспорт через FFmpeg |
+| `transcript-subtitles` | проверенная расшифровка и субтитры с синхронизацией |
+| `video-qc-handoff` | технический и редакционный контроль, структура передачи проекта |
 
 ## Установка
 
-Скопируйте `SKILL.md` в каталог skills Codex или OpenCode. Требуется установленный FFmpeg; Whisper и генераторы видео подключаются только при необходимости.
+```powershell
+pwsh .\install.ps1 -Target codex
+pwsh .\install.ps1 -Target opencode
+```
 
-## Источники
+FFmpeg, Whisper и генераторы видео не устанавливаются автоматически: агент сначала проверяет задачу, права и доступность инструмента.
 
-- [FFmpeg documentation](https://www.ffmpeg.org/documentation.html)
-- [OpenAI Whisper](https://github.com/openai/whisper)
-- [Runway](https://runwayml.com/)
-- [OpenCode Skills](https://docs.opencode.ai/docs/skills/)
+## Проверка
+
+```powershell
+pwsh .\scripts\validate.ps1
+```
+
+Финальный чек-лист находится в `references/delivery-checklist.md`, сценарии активации — в `tests/activation-cases.md`, источники и лицензионные примечания — в `THIRD_PARTY.md`.
+
+Лицензия: MIT. Чужие промпты, пресеты и медиаматериалы в репозиторий не включены.
